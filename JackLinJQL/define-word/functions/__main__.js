@@ -18,7 +18,7 @@ module.exports = (context, callback) => {
     if (error) throw new Error(error);
     const data = JSON.parse(body);
     const definition = data.results[0].lexicalEntries[0].entries[0].senses[0].definitions[0];
-    callback(null, JSON.stringify(definition));
+    callback(null, JSON.stringify(definition).slice(0, -1).substring(1));
   });
 
 };
